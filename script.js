@@ -43,3 +43,13 @@ function showQuestion() {
 }
 
 showQuestion();
+
+document.getElementById("nextBtn").onclick = function() {
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+        showQuestion();
+    } else {
+        alert("Quiz Completed!");
+    }
+};
