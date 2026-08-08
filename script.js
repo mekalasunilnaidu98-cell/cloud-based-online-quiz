@@ -32,7 +32,6 @@ const resultBox = document.getElementById("result-box");
 const scoreElement = document.getElementById("score");
 
 function showQuestion() {
-
     const current = questions[currentQuestion];
 
     questionElement.textContent = current.question;
@@ -43,13 +42,11 @@ function showQuestion() {
         "Question " + (currentQuestion + 1) + " of " + questions.length;
 
     current.options.forEach(function(option) {
-
         const button = document.createElement("button");
 
         button.textContent = option;
 
         button.onclick = function() {
-
             if (option === current.answer) {
                 score++;
                 alert("Correct!");
@@ -65,15 +62,11 @@ function showQuestion() {
 }
 
 function nextQuestion() {
-
     currentQuestion++;
 
     if (currentQuestion < questions.length) {
-
         showQuestion();
-
     } else {
-
         quizBox.style.display = "none";
         resultBox.classList.remove("hidden");
 
@@ -83,7 +76,6 @@ function nextQuestion() {
 }
 
 function restartQuiz() {
-
     currentQuestion = 0;
     score = 0;
 
