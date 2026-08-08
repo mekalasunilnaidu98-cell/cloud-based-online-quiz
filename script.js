@@ -20,3 +20,26 @@ const questions = [
         answer: "Cascading Style Sheets"
     }
 ];
+
+let currentQuestion = 0;
+
+const questionElement = document.getElementById("question");
+const optionsElement = document.getElementById("options");
+
+function showQuestion() {
+    const current = questions[currentQuestion];
+
+    questionElement.textContent = current.question;
+
+    optionsElement.innerHTML = "";
+
+    current.options.forEach(function(option) {
+        const button = document.createElement("button");
+
+        button.textContent = option;
+
+        optionsElement.appendChild(button);
+    });
+}
+
+showQuestion();
